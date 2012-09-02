@@ -1,4 +1,5 @@
 *.swp
 *.swo
 *~
+ho_fraud_report.xls
 config/config.yaml
