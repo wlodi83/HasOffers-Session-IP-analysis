@@ -70,7 +70,6 @@ when "yesterday"
   )
 when "today"
   start = Time.now.strftime("%Y-%m-%d")
-  start = (Time.now - 86400).strftime("%Y-%m-%d")
   response = Requester.make_request(
     url,
     ho_request.merge(
@@ -215,7 +214,7 @@ grouped.each do |key, value|
     status_res = String.new
     status_result.each {|key, value| status_res << "#{key}: #{value}, "}
 
-    if app_payout > 10 or rej_payout > 10
+    if app_payout > 25 or rej_payout > 25
       sheet1.row(row_counter).push key, approved, app_payout, app_browsers, app_offers_id, rejected, rej_payout, rej_browsers, rej_offers_id, status_res.chop.chop
       row_counter += 1
     end
